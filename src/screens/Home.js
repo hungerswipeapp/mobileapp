@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Button } from 'react-native';
 import { Text, FAB } from 'react-native-paper';
+import Actions from '../components/Actions/Actions';
 
-function Home({ navigation }) {
+function Home() {
 	return (
 		<>
 			<View style={styles.container}>
-				<View style={styles.titleContainer}> 
-					<Text style={styles.title}>Home Page</Text>
+				<View style={styles.photoContainer}> 
 				</View>
-		</View>
+				<View style={styles.bottomContainer}>
+					<Actions />
+				</View>
+			</View>
 		</>
 	)
 }
@@ -21,20 +24,22 @@ const styles = StyleSheet.create({
 		paddingHorizontal: 10,
 		paddingVertical: 20,
 	},
-	titleContainer: {
+	photoContainer: {
 		alignItems: 'center',
 		justifyContent: 'center',
+		flex: 6,
+		backgroundColor: '#ff007f',
+		borderRadius: 20
+	},
+	bottomContainer: {
 		flex: 1,
+		flexDirection: 'row',
+		justifyContent: 'space-around',
+		alignItems: 'center'
 	},
-	title: {
-		fontSize: 20,
-	},
-	fab: {
-		position: 'absolute',
-		margin: 20,
-		right: 0,
-		bottom: 10,
-		backgroundColor: '#ff007f'
+	button: {
+		backgroundColor: '#ff007f',
+		borderRadius: 10,
 	}
 });
 

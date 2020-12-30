@@ -1,17 +1,16 @@
 import React from 'react';
-import { View, StyleSheet, Button, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import Login from '../screens/Login';
 import Messages from '../screens/Messages';
 import Profile from '../screens/Profile';
 import Home from '../screens/Home';
-import { Ionicons } from '@expo/vector-icons';
 import Search from '../screens/Search';
-import SearchIcon from './TabIcons/SearchIcon';
-import HungerSwipeIcon from './TabIcons/HungerSwipeIcon';
-import GroupMessagesIcon from './TabIcons/GroupMessagesIcon';
-import AccountIcon from './TabIcons/AccountIcon';
+import TabIcon from './TabIcons/TabIcon';
+
+const HomeIcon = '../../assets/Icons/HungerSwipeLogo.png';
+const SearchIcon = '../../assets/Icons/search-outlined.png';
+const GroupMessagesIcon = '../../assets/Icons/GroupMessages.png';
+const AccountIcon = '../../assets/Icons/AccountIcon.png';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -32,7 +31,7 @@ function Tabs() {
 				component={Home} 
 				options={() => ({
 					tabBarIcon: () => {
-						return <HungerSwipeIcon />
+						return <TabIcon image={require(HomeIcon)}/>
 					}
 				})}/>
 			<Tab.Screen 
@@ -40,7 +39,7 @@ function Tabs() {
 				component={Search} 
 				options={() => ({
 					tabBarIcon: () => {
-						return <SearchIcon />
+						return <TabIcon image={require(SearchIcon)} />
 					}
 				})}/>
 			<Tab.Screen 
@@ -48,7 +47,7 @@ function Tabs() {
 				component={Messages} 
 				options={() => ({
 					tabBarIcon: () => {
-						return <GroupMessagesIcon />
+						return <TabIcon image={require(GroupMessagesIcon)} />
 					}
 				})}/>
 			<Tab.Screen 
@@ -56,14 +55,11 @@ function Tabs() {
 				component={Profile} 
 				options={() => ({
 					tabBarIcon: () => {
-						return <AccountIcon />
+						return <TabIcon image={require(AccountIcon)} />
 					}
 				})}/>
 			</Tab.Navigator>
 		</NavigationContainer>
-	// <View>
-	// 	<Text>Tabs</Text>
-	// </View>
 	);
 }
 
