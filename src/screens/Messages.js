@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, FlatList } from 'react-native';
 import { FAB } from 'react-native-paper';
+import FlatListView from '../components/FlastListView/FlatListView';
 
-function Messages({ navigation }) {
+function Messages() {
 	return (
 		<>
 			<View style={styles.container}>
-				<View style={styles.titleContainer}> 
-					<Text style={styles.title}>Messages</Text>
-				</View>
-		</View>
+				<FlatListView />
+			</View>
 		</>
 	)
 }

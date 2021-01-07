@@ -1,14 +1,22 @@
 import React, { useState } from 'react'
 import { StyleSheet, View, Image } from 'react-native';
 import { Text, FAB } from 'react-native-paper';
+import { SearchBar } from 'react-native-elements';
 
-function Search({ navigation }) {
+function Search() {
 	return (
 		<>
 			<View style={styles.container}>
-				<View style={styles.titleContainer}> 
-					<Text style={styles.title}>Search Page</Text>
-				</View>
+				<SearchBar 
+					value=""
+					searchIcon={{ size: 24 }}
+					lightTheme={true}
+					round={true}
+					inputStyle={{backgroundColor: 'white'}}
+    				containerStyle={{backgroundColor: 'white', borderWidth: 1, borderRadius: 5}}
+    				placeholderTextColor={'#g5g5g5'}
+    				placeholder='Search'
+					/>
 		</View>
 		</>
 	)
