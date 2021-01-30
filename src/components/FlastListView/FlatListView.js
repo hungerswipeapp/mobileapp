@@ -1,7 +1,8 @@
 import React from 'react'
-import { StyleSheet, View, Text, FlatList } from 'react-native';
+import { StyleSheet, View, Text, FlatList, TouchableOpacity } from 'react-native';
 
-const FlatListView = () => {
+const FlatListView = ({ navigation }) => {
+
 	return (
 		<>
 			<FlatList 
@@ -40,9 +41,9 @@ const FlatListView = () => {
 						name: 'Devin'},
 				]}
 				renderItem={({ item }) => (
-					<View style={styles.listItem}>
+					<TouchableOpacity style={styles.listItem} onPress={() => navigation.push("MessageThread")}>
 						<Text style={styles.item}>{item.name}</Text>
-					</View>
+					</TouchableOpacity>
 				)}/>
 		</>
 	)
