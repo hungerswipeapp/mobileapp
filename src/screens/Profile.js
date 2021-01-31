@@ -24,7 +24,8 @@ function Profile({ navigation }) {
 							size='34' 
 							color="#f85db3"
 							type="font-awesome-5"
-							name='cog'/>
+							name='cog'
+							onPress={() => navigation.push("Settings")}/>
 						<Text style={{ alignSelf: 'center', color: '#f85db3' }}>SETTINGS</Text>
 					</TouchableOpacity>
 					<TouchableOpacity style={{marginTop: 30}}>
@@ -33,7 +34,8 @@ function Profile({ navigation }) {
 							size='34'
 							color="#f85db3"
 							type="font-awesome-5"
-							name='camera'/>
+							name='camera'
+							onPress={() => navigation.push("Add Photo")}/>
 					<Text style={{ alignSelf: 'center', color: '#f85db3' }}>ADD PHOTO</Text>
 					</TouchableOpacity>
 					<TouchableOpacity style={{marginBottom: 50}}>
@@ -42,7 +44,8 @@ function Profile({ navigation }) {
 							size='34'
 							color='#f85db3'
 							type="font-awesome-5"
-							name='edit'/>
+							name='edit'
+							onPress={() => navigation.push("Edit Info")}/>
 					<Text style={{ alignSelf: 'center', color: '#f85db3' }}>EDIT INFO</Text>
 					</TouchableOpacity>
 				</View>

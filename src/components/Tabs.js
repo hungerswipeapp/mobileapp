@@ -8,6 +8,9 @@ import Home from '../screens/Home';
 import Search from '../screens/Search';
 import TabIcon from './TabIcons/TabIcon';
 import MessageThread from '../screens/MessageThread';
+import Settings from '../screens/Settings';
+import EditInfo from '../screens/EditInfo';
+import AddPhoto from '../screens/AddPhoto';
 
 const HomeIcon = '../../assets/Icons/HungerSwipeLogo.png';
 const SearchIcon = '../../assets/Icons/search-outlined.png';
@@ -15,22 +18,47 @@ const GroupMessagesIcon = '../../assets/Icons/GroupMessages.png';
 const AccountIcon = '../../assets/Icons/AccountIcon.png';
 
 const MessagesStack = createStackNavigator();
-
+const ProfileStack = createStackNavigator();
 const Tab = createMaterialTopTabNavigator();
 
 function MessagesStackScreen() {
 	return (
 		<MessagesStack.Navigator
 			screenOptions={{
-				headerShown: false,
-        		gestureEnabled: true,
-        		cardOverlayEnabled: true,
+				
 			}}>
 			<MessagesStack.Screen 
 				name="Messages" 
-				component={Messages} />
-			<MessagesStack.Screen name="MessageThread" component={MessageThread} />
+				component={Messages} 
+				/>
+			<MessagesStack.Screen 
+				name="MessageThread" 
+				component={MessageThread} 
+				/>
 		</MessagesStack.Navigator>
+	);
+}
+
+function ProfileNavigator() {
+	return (
+		<ProfileStack.Navigator>
+			<ProfileStack.Screen 
+				name="Profile"
+				component={Profile}
+			/>
+			<ProfileStack.Screen 
+				name="Add Photo"
+				component={AddPhoto}
+			/>
+			<ProfileStack.Screen
+				name="Settings"
+				component={Settings} 
+			/>
+			<ProfileStack.Screen 
+				name="Edit Info"
+				component={EditInfo}
+			/>
+		</ProfileStack.Navigator>
 	);
 }
 
@@ -72,7 +100,7 @@ function Tabs() {
 				})}/>
 			<Tab.Screen 
 				name="Profile" 
-				component={Profile} 
+				component={ProfileNavigator} 
 				options={() => ({
 					tabBarIcon: () => {
 						return <TabIcon image={require(AccountIcon)} />
