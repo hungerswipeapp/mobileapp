@@ -25,7 +25,7 @@ function MessagesStackScreen() {
 	return (
 		<MessagesStack.Navigator
 			screenOptions={{
-				
+				showLabel: false
 			}}>
 			<MessagesStack.Screen 
 				name="Messages" 
@@ -33,18 +33,22 @@ function MessagesStackScreen() {
 				/>
 			<MessagesStack.Screen 
 				name="MessageThread" 
-				component={MessageThread} 
+				component={MessageThread}
+				options={({ route }) => ({
+					title: route.params.thread.name
+				})} 
 				/>
 		</MessagesStack.Navigator>
 	);
 }
 
-function ProfileNavigator() {
+function ProfileStackScreen() {
 	return (
 		<ProfileStack.Navigator>
 			<ProfileStack.Screen 
 				name="Profile"
 				component={Profile}
+				options={{}}
 			/>
 			<ProfileStack.Screen 
 				name="Add Photo"
@@ -100,7 +104,7 @@ function Tabs() {
 				})}/>
 			<Tab.Screen 
 				name="Profile" 
-				component={ProfileNavigator} 
+				component={ProfileStackScreen} 
 				options={() => ({
 					tabBarIcon: () => {
 						return <TabIcon image={require(AccountIcon)} />

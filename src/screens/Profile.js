@@ -21,7 +21,7 @@ function Profile({ navigation }) {
 					<TouchableOpacity style={{marginBottom: 50}}>
 						<Icon
 							reverse
-							size='34' 
+							size={34} 
 							color="#f85db3"
 							type="font-awesome-5"
 							name='cog'
@@ -31,7 +31,7 @@ function Profile({ navigation }) {
 					<TouchableOpacity style={{marginTop: 30}}>
 						<Icon
 							reverse
-							size='34'
+							size={34}
 							color="#f85db3"
 							type="font-awesome-5"
 							name='camera'
@@ -41,7 +41,7 @@ function Profile({ navigation }) {
 					<TouchableOpacity style={{marginBottom: 50}}>
 						<Icon 
 							reverse
-							size='34'
+							size={34}
 							color='#f85db3'
 							type="font-awesome-5"
 							name='edit'
@@ -49,7 +49,7 @@ function Profile({ navigation }) {
 					<Text style={{ alignSelf: 'center', color: '#f85db3' }}>EDIT INFO</Text>
 					</TouchableOpacity>
 				</View>
-				<View
+				{/* <View
 					style={{
 						borderBottomColor: 'grey',
 						borderBottomWidth: 3,
@@ -57,7 +57,7 @@ function Profile({ navigation }) {
 						shadowOffset: {height: 2, width: 0},
 						marginTop: 10
 					}}
-				/>
+				/> */}
 				<View style={styles.bioContainer}>
 					<View>
 						<Text style={{ marginLeft: 20, marginRight: 20, fontSize: 25 }}>Bio</Text>

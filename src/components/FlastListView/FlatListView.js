@@ -41,7 +41,7 @@ const FlatListView = ({ navigation }) => {
 						name: 'Devin'},
 				]}
 				renderItem={({ item }) => (
-					<TouchableOpacity style={styles.listItem} onPress={() => navigation.push("MessageThread")}>
+					<TouchableOpacity style={styles.listItem} onPress={() => navigation.navigate("MessageThread", { thread: item })}>
 						<Text style={styles.item}>{item.name}</Text>
 					</TouchableOpacity>
 				)}/>
