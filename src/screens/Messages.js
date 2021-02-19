@@ -3,11 +3,11 @@ import { StyleSheet, View, Text, FlatList } from 'react-native';
 import { FAB } from 'react-native-paper';
 import FlatListView from '../components/FlastListView/FlatListView';
 
-function Messages() {
+function Messages({ navigation }) {
 	return (
 		<>
 			<View style={styles.container}>
-				<FlatListView />
+				<FlatListView navigation={navigation}/>
 			</View>
 		</>
 	)
