@@ -1,11 +1,13 @@
 import React from 'react'
 import { StyleSheet, View, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { Text } from 'react-native-paper';
-import { Image, Icon } from 'react-native-elements';
+import { Image, Icon, Button} from 'react-native-elements';
+import { AuthContext } from "../../context";
 
 const noUserPhoto = '../../assets/Icons/no-user.jpg';
 
 function Profile({ navigation }) {
+	const { signOut } = React.useContext(AuthContext);
 	return (
 		<>
 			<View style={styles.container}>
@@ -65,6 +67,7 @@ function Profile({ navigation }) {
 					</View>
 					<View>
 						<Text style={{ margin: 20 }}>Recently Visited</Text>
+						<Button title="Sign Out" onPress={() => signOut()} />
 					</View>
 				</View>
 			</View>

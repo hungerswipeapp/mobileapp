@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+// import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import Messages from '../screens/Messages';
@@ -68,7 +68,7 @@ function ProfileStackScreen() {
 
 function Tabs() {
 	return (
-		<NavigationContainer>
+		
 			<Tab.Navigator 
 				style={{ marginTop: 40 }}
 				tabBarOptions={{
@@ -111,7 +111,7 @@ function Tabs() {
 					}
 				})}/>
 			</Tab.Navigator>
-		</NavigationContainer>
+		
 	);
 }
 
