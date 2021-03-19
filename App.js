@@ -8,8 +8,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import { AuthContext } from "./context";
 
-import { SignIn, CreateAccount, Profile, Home, Loading} from "./src/screens/SignInScreen";
-import { PhoneSignIn } from "./src/screens/PhoneSignIn";
+import { SignIn, Profile, Home, Loading} from "./src/screens/SignInScreen";
+import { PhoneSignIn, VerificationCode, FullName } from "./src/screens/PhoneSignIn";
 
 const theme = {
   colors: {
@@ -65,11 +65,12 @@ const ProfileStackScreen = () => (
 const AuthStack = createStackNavigator();
 const AuthStackScreen = () => (
   <AuthStack.Navigator initialRouteName="SignIn">
-    <AuthStack.Screen
+    {/* <AuthStack.Screen
       name="CreateAccount"
       component={CreateAccount}
       options={{ title: "Create Account" }}
-    />
+    /> */}
+   
     <AuthStack.Screen
       name="SignIn"
       component={SignIn}
@@ -79,6 +80,16 @@ const AuthStackScreen = () => (
       name="PhoneSignIn"
       component={PhoneSignIn}
       options={{ title: "Phone Sign In" }}
+    />
+    <AuthStack.Screen
+      name="VerificationCode"
+      component={VerificationCode}
+      options={{ title: "Verification Code" }}
+    />
+    <AuthStack.Screen
+      name="FullName"
+      component={FullName}
+      options={{ title: "Full Name"}}
     />
   </AuthStack.Navigator>
 );

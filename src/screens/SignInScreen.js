@@ -89,7 +89,7 @@ export function SignIn({ navigation }) {
        />
         <Text style={styles.text}>By tapping Create Account or Sign In, you agree to our Terms. Learn how we process your data in Private Policy and Cookies Policy.</Text>
         
-        <TouchableOpacity onPress={() => navigation.push("CreateAccount")} style={styles.FilledButtonContainer}>
+        <TouchableOpacity onPress={() => navigation.push("PhoneSignIn")} style={styles.FilledButtonContainer}>
           <Text style={styles.FilledButtonText}>Create Account</Text>
         </TouchableOpacity>
         
@@ -103,38 +103,40 @@ export function SignIn({ navigation }) {
   );
 }
 
-export function CreateAccount({ navigation }) {
-  const { signUp } = React.useContext(AuthContext);
-  return (
-      <ScreenContainer>
-        <LinearGradient
-          // Background Linear Gradient
-          colors={["#FA89A7", "#ED5DBB"]}
-          start={[0, 0]}
-          end={[1, 1]}
-          style={styles.background}
-        />
-        <Image
-        style={styles.image}
-        source={require('../../assets/Icons/name.png')}
-        resizeMode="contain"
-       />
-        <Text style={styles.text}>By tapping Create Account or Sign In, you agree to our Terms. Learn how we process your data in Private Policy and Cookies Policy.</Text>
-        
-        <TouchableOpacity onPress={() => signUp()} style={styles.ButtonContainer}>
-          <Text style={styles.ButtonText}>SIGN IN WITH APPLE</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => signUp()} style={styles.ButtonContainer}>
-          <Text style={styles.ButtonText}>SIGN IN WITH FACEBOOK</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.push("PhoneSignIn")} style={styles.ButtonContainer}>
-          <Text style={styles.ButtonText}>SIGN IN WITH PHONE NUMBER</Text>
-        </TouchableOpacity>
 
-        <Text style={styles.text}>Trouble Signing In?</Text>
-      </ScreenContainer>
-  );
-}
+
+// export function MultiAccounts({ navigation }) {
+//   const { signUp } = React.useContext(AuthContext);
+//   return (
+//       <ScreenContainer>
+//         <LinearGradient
+//           // Background Linear Gradient
+//           colors={["#FA89A7", "#ED5DBB"]}
+//           start={[0, 0]}
+//           end={[1, 1]}
+//           style={styles.background}
+//         />
+//         <Image
+//         style={styles.image}
+//         source={require('../../assets/Icons/name.png')}
+//         resizeMode="contain"
+//        />
+//         <Text style={styles.text}>By tapping Create Account or Sign In, you agree to our Terms. Learn how we process your data in Private Policy and Cookies Policy.</Text>
+        
+//         <TouchableOpacity onPress={() => signUp()} style={styles.ButtonContainer}>
+//           <Text style={styles.ButtonText}>SIGN IN WITH APPLE</Text>
+//         </TouchableOpacity>
+//         <TouchableOpacity onPress={() => signUp()} style={styles.ButtonContainer}>
+//           <Text style={styles.ButtonText}>SIGN IN WITH FACEBOOK</Text>
+//         </TouchableOpacity>
+//         <TouchableOpacity onPress={() => navigation.push("PhoneSignIn")} style={styles.ButtonContainer}>
+//           <Text style={styles.ButtonText}>SIGN IN WITH PHONE NUMBER</Text>
+//         </TouchableOpacity>
+
+//         <Text style={styles.text}>Trouble Signing In?</Text>
+//       </ScreenContainer>
+//   );
+// }
 
 export const SignOut = () => {
   return (
